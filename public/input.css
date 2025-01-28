@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+    --font-IRANSans-Medium:"IRANSans-Medium";
+    --font-IRANSans-Light:"IRANSans-Light";
+    --font-IRANSans-Bold:"IRANSans-Bold";
+
+    --color-primary-orange:#f85a40;
+    
+}
+
+@font-face {
+    font-family:IRANSans-Medium;
+    font-display: swap;
+    src: url(./font/IRANSans\(FaNum\)_Medium.ttf);
+  }
+
+  @font-face {
+    font-family:IRANSans-Light;
+    font-display: swap;
+    src: url(./font/IRANSans\(FaNum\)_Light.ttf)
+  }
+
+  @font-face {
+    font-family:IRANSans-Bold;
+    font-display: swap;
+    src: url(./font/IRANSans\(FaNum\)_Bold.ttf)
+  }
+
+ 
+  
+  
