@@ -7,16 +7,27 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- Svg -->
+     <svg class="hidden">
+
+        <symbol id="x-mark" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </symbol>
+          
+
+        <symbol id="bars-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </symbol>
+ 
+     </svg>
   <header>
     <div>
-        <!-- Background-image -->
      <div class="relative">
-        <img class="w-full h-[30rem]" src="./img/background-header.png" alt="background-header">
-        <div class="fixed inset-0 bg-zinc-500/10 z-50" id="overlay"></div>
+        <img class="w-full h-[30rem]" src="./img/background-header.png" alt="background-header">      
         <!-- Menu -->
-        <div class="flex justify-around">
+        <div class="lg:flex justify-around">
             <!-- Left-menu -->
-            <div class="absolute top-10 left-20 flex text-5xl">
+            <div class="absolute top-10 md:left-20 left-10 flex text-xl md:text-3xl lg:text-5xl">
                 <h1 class="text-primary-orange font-IRANSans-Medium">
                     تیچ
                 </h1>
@@ -25,24 +36,47 @@
                 </h1>
             </div>
             <!-- Right-menu -->
-             <div class="absolute top-14 right-10">
-                <ul class="flex gap-x-5 text-zinc-600 text-xl font-IRANSans-Medium">
-                    <li class="hover:text-orange-700"><a href="#">خانه</a></li>
-                    <li><a href="#">خدمات</a></li>
-                    <li><a href="#">درباره ما</a></li>
-                    <li><a href="#">نظرات</a></li>
-                    <li><a href="#">تیم ما</a></li>
-                    <li><a href="#">سوالات</a></li>
-                    <li><a href="#">اخبار</a></li>
-                    <li><a href="#">ارتباط با ما</a></li>
+             <div class="hidden lg:flex absolute top-14 right-10">
+                <ul class="flex gap-x-5 text-primary-white text-xl font-IRANSans-Medium">
+                    <li class="hover:border-b hover:border-primary-orange"><a href="#">خانه</a></li>
+                    <li class="hover:border-b hover:border-primary-orange"><a href="#">خدمات</a></li>
+                    <li class="hover:border-b hover:border-primary-orange"><a href="#">درباره ما</a></li>
+                    <li class="hover:border-b hover:border-primary-orange"><a href="#">نظرات</a></li>
+                    <li class="hover:border-b hover:border-primary-orange"><a href="#">تیم ما</a></li>
+                    <li class="hover:border-b hover:border-primary-orange"><a href="#">سوالات</a></li>
+                    <li class="hover:border-b hover:border-primary-orange"><a href="#">اخبار</a></li>
+                    <li class="hover:border-b hover:border-primary-orange"><a href="#">ارتباط با ما</a></li>
                 </ul>
              </div>
          </div>
+         <!-- Navbar -->
+          <div class="flex lg:hidden">
+       <div>
+        <svg class="w-7 h-7 text-primary-orange absolute top-9 right-9 menu-btn">
+            <use href="#bars-3"></use>
+           </svg>
+           <ul class="hidden bg-primary-orange text-white font-IRANSans-Medium text-right absolute pr-3 top-0 w-full h-[30rem] side-menu">
+            <svg class="w-7 h-7 text-white mt-3 ml-3 close-menu__btn">
+                <use href="#x-mark"></use>
+            </svg>
+            <li class="mt-8"><a href="#">خانه</a></li>
+            <li class="mt-4"><a href="#">خدمات</a></li>
+            <li class="mt-4"><a href="#">درباره ی ما</a></li>
+            <li class="mt-4"><a href="#">نظرات</a></li>
+            <li class="mt-4"><a href="#">تیم ما</a></li>
+            <li class="mt-4"><a href="#">سوالات</a></li>
+            <li class="mt-4"><a href="#">اخبار</a></li>
+            <li class="mt-4"><a href="#">ارتباط با ما</a></li>
+           </ul>
+       </div>
+          </div>
      </div>
      
     </div>
     
 
   </header>
+
+  <script src="./app.js"></script>
 </body>
 </html>

@@ -381,6 +381,7 @@
     --font-IRANSans-Light: "IRANSans-Light";
     --font-IRANSans-Bold: "IRANSans-Bold";
     --color-primary-orange: #f85a40;
+    --color-primary-white: #fbfefb;
   }
 }
 @layer base {
@@ -525,47 +526,47 @@
   }
 }
 @layer utilities {
-  .collapse {
-    visibility: collapse;
-  }
   .absolute {
     position: absolute;
-  }
-  .fixed {
-    position: fixed;
   }
   .relative {
     position: relative;
   }
-  .inset-0 {
-    inset: calc(var(--spacing) * 0);
+  .top-0 {
+    top: calc(var(--spacing) * 0);
+  }
+  .top-9 {
+    top: calc(var(--spacing) * 9);
   }
   .top-10 {
     top: calc(var(--spacing) * 10);
   }
-  .top-12 {
-    top: calc(var(--spacing) * 12);
-  }
   .top-14 {
     top: calc(var(--spacing) * 14);
   }
-  .top-16 {
-    top: calc(var(--spacing) * 16);
-  }
-  .top-44 {
-    top: calc(var(--spacing) * 44);
+  .right-9 {
+    right: calc(var(--spacing) * 9);
   }
   .right-10 {
     right: calc(var(--spacing) * 10);
   }
-  .left-20 {
-    left: calc(var(--spacing) * 20);
+  .left-10 {
+    left: calc(var(--spacing) * 10);
   }
-  .z-50 {
-    z-index: 50;
+  .mt-3 {
+    margin-top: calc(var(--spacing) * 3);
+  }
+  .mt-4 {
+    margin-top: calc(var(--spacing) * 4);
+  }
+  .mt-8 {
+    margin-top: calc(var(--spacing) * 8);
   }
   .ml-1 {
     margin-left: calc(var(--spacing) * 1);
+  }
+  .ml-3 {
+    margin-left: calc(var(--spacing) * 3);
   }
   .block {
     display: block;
@@ -573,29 +574,20 @@
   .flex {
     display: flex;
   }
-  .inline-flex {
-    display: inline-flex;
+  .hidden {
+    display: none;
   }
-  .list-item {
-    display: list-item;
-  }
-  .table {
-    display: table;
+  .h-7 {
+    height: calc(var(--spacing) * 7);
   }
   .h-\[30rem\] {
     height: 30rem;
   }
+  .w-7 {
+    width: calc(var(--spacing) * 7);
+  }
   .w-full {
     width: 100%;
-  }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .transform {
-    transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y);
-  }
-  .resize {
-    resize: both;
   }
   .justify-around {
     justify-content: space-around;
@@ -603,32 +595,17 @@
   .gap-x-5 {
     column-gap: calc(var(--spacing) * 5);
   }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
+  .bg-primary-orange {
+    background-color: var(--color-primary-orange);
   }
-  .border-primary-orange {
-    border-color: var(--color-primary-orange);
+  .pr-3 {
+    padding-right: calc(var(--spacing) * 3);
   }
-  .bg-zinc-500 {
-    background-color: var(--color-zinc-500);
-  }
-  .bg-zinc-500\/10 {
-    background-color: color-mix(in oklab, var(--color-zinc-500) 10%, transparent);
-  }
-  .font-IRANSans-Light {
-    font-family: var(--font-IRANSans-Light);
+  .text-right {
+    text-align: right;
   }
   .font-IRANSans-Medium {
     font-family: var(--font-IRANSans-Medium);
-  }
-  .text-2xl {
-    font-size: var(--text-2xl);
-    line-height: var(--tw-leading, var(--text-2xl--line-height));
-  }
-  .text-5xl {
-    font-size: var(--text-5xl);
-    line-height: var(--tw-leading, var(--text-5xl--line-height));
   }
   .text-xl {
     font-size: var(--text-xl);
@@ -637,27 +614,11 @@
   .text-primary-orange {
     color: var(--color-primary-orange);
   }
+  .text-primary-white {
+    color: var(--color-primary-white);
+  }
   .text-white {
     color: var(--color-white);
-  }
-  .text-zinc-300 {
-    color: var(--color-zinc-300);
-  }
-  .text-zinc-400 {
-    color: var(--color-zinc-400);
-  }
-  .text-zinc-500 {
-    color: var(--color-zinc-500);
-  }
-  .text-zinc-600 {
-    color: var(--color-zinc-600);
-  }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
   }
   .hover\:border-b {
     &:hover {
@@ -674,18 +635,31 @@
       }
     }
   }
-  .hover\:text-orange-700 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-orange-700);
-      }
+  .md\:left-20 {
+    @media (width >= 48rem) {
+      left: calc(var(--spacing) * 20);
     }
   }
-  .hover\:text-primary-orange {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-primary-orange);
-      }
+  .md\:text-3xl {
+    @media (width >= 48rem) {
+      font-size: var(--text-3xl);
+      line-height: var(--tw-leading, var(--text-3xl--line-height));
+    }
+  }
+  .lg\:flex {
+    @media (width >= 64rem) {
+      display: flex;
+    }
+  }
+  .lg\:hidden {
+    @media (width >= 64rem) {
+      display: none;
+    }
+  }
+  .lg\:text-5xl {
+    @media (width >= 64rem) {
+      font-size: var(--text-5xl);
+      line-height: var(--tw-leading, var(--text-5xl--line-height));
     }
   }
 }
@@ -703,6 +677,15 @@
   font-family: IRANSans-Bold;
   font-display: swap;
   src: url(./font/IRANSans\(FaNum\)_Bold.ttf);
+}
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 30rem;
+  background-color: #f85a40;
+  transition: right 0.3s ease-in-out;
 }
 @keyframes spin {
   to {
@@ -730,37 +713,7 @@
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
-@property --tw-rotate-x {
-  syntax: "*";
-  inherits: false;
-  initial-value: rotateX(0);
-}
-@property --tw-rotate-y {
-  syntax: "*";
-  inherits: false;
-  initial-value: rotateY(0);
-}
-@property --tw-rotate-z {
-  syntax: "*";
-  inherits: false;
-  initial-value: rotateZ(0);
-}
-@property --tw-skew-x {
-  syntax: "*";
-  inherits: false;
-  initial-value: skewX(0);
-}
-@property --tw-skew-y {
-  syntax: "*";
-  inherits: false;
-  initial-value: skewY(0);
-}
 @property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
-@property --tw-outline-style {
   syntax: "*";
   inherits: false;
   initial-value: solid;
