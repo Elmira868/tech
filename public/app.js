@@ -7,6 +7,7 @@ const closeMenuBtn = document.querySelector('.close-menu__btn');
 menuBtn.addEventListener('click', () => {
     sideMenu.style.right = '0'; 
     sideMenu.style.display = 'block';
+    sideMenu.style.zIndex ='9999'
 });
 // Close menu function
 closeMenuBtn.addEventListener('click', () => {
