@@ -27,6 +27,12 @@
     src: url(./font/IRANSans\(FaNum\)_Bold.ttf)
   }
 
+  .centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .side-menu {
     position: fixed;
     top: 0;
