@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./vendor/swiper/swiper.css">
     <link rel="stylesheet" href="./vendor/animate/animate.min.css">
     <link rel="stylesheet" href="output.css" />
     <title>Document</title>
@@ -403,8 +404,38 @@
           </button>
         </div>
         </section>
+        <!-- Comments box -->
+         <section class="mt-12 hidden md:block">
+          <!-- Comment title box -->
+<div class="flex flex-col text-center">
+  <h1 class="font-IRANSans-Bold text-zinc-950 text-base md:text-xl lg:text-2xl">
+    نظرات کاربران
+  </h1>
+  <p class="font-IRANSans-Medium text-sm text-gray-400 mt-4">
+    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
+  </p>
+</div>
+<!-- Slider -->
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+  </div>
+  <div class="swiper-pagination absolute"></div>
+</div>
+         </section>
     </main>
 
+<script src="./vendor/swiper/swiper.js"></script>
+<script>
+  let swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+</script>
 
     <script src="./vendor/wow js/wow.min.js"></script>
     <script>
