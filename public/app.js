@@ -28,7 +28,7 @@ users.forEach(user =>{
     slideContainer.insertAdjacentHTML('beforeend' , `
       <div class="swiper-slide">
       <!-- Card -->
-<div class="w-fit border border-gray-400 rounded-md rounded-br-4xl swiper-slide">
+<div class="w-fit swiper-slide">
   <div class="flex p-3 gap-x-4 centered">
     <img class="lg:w-24 lg:h-24 w-20 h-20 rounded-full" src=${user.img} alt=${user.name}>
     <span class="font-IRANSans-Bold text-zinc-950 text-base lg:text-lg">
