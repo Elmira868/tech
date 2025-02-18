@@ -14,7 +14,7 @@ closeMenuBtn.addEventListener('click', () => {
     sideMenu.style.right = '-100%'; 
 });
 
-// Create users
+
 const users = [
     {name: 'علی', img:'./img/user-3.webp', comment:'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده'},
     {name: 'رضا' , img:'./img/user-4.webp', comment:'ل تولید سادگی نامفهوم از و لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت'},
@@ -24,6 +24,7 @@ const users = [
 
 const slideContainer = document.querySelector('.swiper-wrapper');
 
+// Create users
 users.forEach(user =>{
     slideContainer.insertAdjacentHTML('beforeend' , `
       <div class="swiper-slide">
@@ -43,7 +44,7 @@ users.forEach(user =>{
         `)
 })
 
-// Create members
+
 const members = [
   {fullName: 'سمیرا احمدی' , jobTitle: 'مدیر پروژه' , imgUrl: './img/member-1.jpg'},
   {fullName: 'الناز محمدی' , jobTitle: 'فرانت اند دولوپر' , imgUrl: './img/member-2.jpg'},
@@ -53,6 +54,7 @@ const members = [
 
 const memberContainer = document.querySelector('.member-container')
 
+// Create members
 members.forEach(member => {
   memberContainer.insertAdjacentHTML('beforeend',`
     <div class="flex gap-x-3 mt-4 lg:mt-0">
@@ -88,4 +90,65 @@ members.forEach(member => {
               </div>
     `)
 })
+
+const frequentlyAskedQuestions = [
+  {
+    titleFaqs:'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و1',
+    textFaqs: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و'
+  },
+{
+  titleFaqs: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت',
+  textFaqs: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که'
+},
+{
+  titleFaqs: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده',
+  textFaqs: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها'
+},
+{
+  titleFaqs: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه',
+  textFaqs: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط'
+}
+];
+
+const accordionsContainer = document.querySelector('.accordions-container');
+
+// 
+frequentlyAskedQuestions.forEach((faq, index) => {
+  accordionsContainer.insertAdjacentHTML('beforeend', `
+    <div class="border-b border-slate-200 shadow-sm mt-8 p-2">
+      <button class="w-full flex justify-between items-center py-5 text-slate-800 accordion_btn">
+      <span id="icon-${index}" class="text-zinc-950 transition-transform duration-300">
+          <svg class="w-5 h-5">
+            <use href="#chevron-down"></use>
+          </svg>
+        </span>
+        <span class="font-IRANSans-Bold text-sm line-clamp-1 md:line-clamp-3 md:text-base">${faq.titleFaqs}</span>
+      </button>
+      <div id="content-${index}" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+        <div class="pb-5 font-IRANSans-Medium text-sm text-gray-400 text-right">
+          ${faq.textFaqs}
+        </div>
+      </div>
+    </div>
+  `);
+});
+
+// Get all the chordon buttons and add click event
+document.querySelectorAll('.accordion_btn').forEach((btn, index) => {
+  btn.addEventListener('click', () => {
+    const content = document.querySelector(`#content-${index}`);
+    const icon = document.querySelector(`#icon-${index}`);
+
+    // Checking Open/Closed Chordon
+    if (content.style.maxHeight) {
+      content.style.maxHeight = null; 
+      icon.style.transform = "rotate(0deg)";
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+      icon.style.transform = "rotate(180deg)";
+    }
+  });
+});
+
+
 
