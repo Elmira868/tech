@@ -151,4 +151,58 @@ document.querySelectorAll('.accordion_btn').forEach((btn, index) => {
 });
 
 
+const news = [
+  {
+    newsImgUrl:'./img/blog-1.jpg',
+    titleNews: 'لورم ایپسوم متن ساختگی',
+    textNews: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و',
+    writer: 'علی رحمانی',
+    date: '1398/04/15'
+  },
 
+  {
+    newsImgUrl:'./img/blog-2.jpg',
+    titleNews: 'لورم ایپسوم متن ساختگی با تولید',
+    textNews: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده',
+    writer: 'سحر میرزایی',
+    date: '1398/06/20'
+  },
+
+  {
+    newsImgUrl:'./img/blog-3.jpg',
+    titleNews: 'لورم ایپسوم متن ساختگی با تولید سادگی ',
+    textNews: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از لورم ایپسوم',
+    writer: 'محمد حسنی',
+    date: '1398/08/01'
+  }
+]
+
+const newsContainer = document.querySelector('.news-container')
+
+// Create news box
+news.forEach(news => {
+  newsContainer.insertAdjacentHTML('beforeend', `
+    <div class="md:w-72 w-full mt-3 md:mt-5 lg:mt-0 bg-white border border-gray-400 md:rounded-md md:rounded-br-4xl">
+    <img class="w-full h-60" src=${news.newsImgUrl} alt=${news.titleNews}>
+    <!-- Cart body -->
+    <div class="text-right p-2 mt-2">
+      <h3 class="font-IRANSans-Medium text-zinc-500">
+        ${news.titleNews}
+      </h3>
+<!-- Title and name -->
+      <div class="group cursor-pointer">
+        <h1 class="font-IRANSans-Bold text-primary-orange text-lg line-clamp-2 mt-1 group-hover:text-zinc-950">
+          ${news.textNews}
+        </h1>
+        <h3 class="font-IRANSans-Bold text-primary-orange mt-1 group-hover:text-zinc-950">
+          ${news.writer}
+        </h3>
+      </div>
+<!-- History -->
+ <h5 class="font-IRANSans-Light text-zinc-500 text-sm mr-1.5 mt-1">
+  ${news.date}
+ </h5>
+    </div>
+   </div>
+    `)
+})
