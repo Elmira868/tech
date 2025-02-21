@@ -182,7 +182,7 @@ const newsContainer = document.querySelector('.news-container')
 // Create news box
 news.forEach(news => {
   newsContainer.insertAdjacentHTML('beforeend', `
-    <div class="md:w-72 w-full mt-3 md:mt-5 lg:mt-0 bg-white border border-gray-400 md:rounded-md md:rounded-br-4xl">
+    <div class="md:w-72 w-full mt-3 md:mt-5 lg:mt-0 bg-white border border-gray-400 md:rounded-md md:rounded-br-4xl mb-4">
     <img class="w-full h-60" src=${news.newsImgUrl} alt=${news.titleNews}>
     <!-- Cart body -->
     <div class="text-right p-2 mt-2">
