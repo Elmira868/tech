@@ -7,6 +7,7 @@
 
     --color-primary-orange:#f85a40;
     --color-primary-white:#fbfefb;
+ 
 }
 
 @font-face {
@@ -26,8 +27,6 @@
     font-display: swap;
     src: url(./font/IRANSans\(FaNum\)_Bold.ttf)
   }
-
- 
 
 
   .centered {
